@@ -1,4 +1,4 @@
-package com.example.theswitcher_rubenrocha
+package com.example.theSwitcher
 
 import org.junit.Test
 
