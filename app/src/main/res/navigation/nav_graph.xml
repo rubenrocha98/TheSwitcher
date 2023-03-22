@@ -7,7 +7,15 @@
     <fragment
         android:id="@+id/roomsListFragment"
         android:name="com.example.theSwitcher.view.RoomListFragment"
-        android:label="Loading Fragment">
+        android:label="list">
+        <action
+            android:id="@+id/action_roomsListFragment_to_insideRoomFragment"
+            app:destination="@id/insideRoomFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/insideRoomFragment"
+        android:name="com.example.theSwitcher.view.InsideRoomFragment"
+        android:label="room"/>
 
 </navigation>

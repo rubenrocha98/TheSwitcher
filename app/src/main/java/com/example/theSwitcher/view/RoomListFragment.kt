@@ -5,9 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.theSwitcher.adapter.RoomListAdapter
 import com.example.theSwitcher.model.Room
+import com.example.theSwitcher.util.Util
 import com.example.theswitcher_rubenrocha.R
 import com.example.theswitcher_rubenrocha.databinding.RoomsListFragmentBinding
 
@@ -50,7 +52,9 @@ class RoomListFragment : Fragment(R.layout.rooms_list_fragment) {
 
 
     private fun onRoomClicked(data: Room) {
-
+        val bundle = Bundle()
+        bundle.putParcelable(Util.ARG_LIGHT, data)
+        findNavController().navigate(R.id.action_roomsListFragment_to_insideRoomFragment, bundle)
     }
 
 }
