@@ -3,8 +3,7 @@ package com.example.theSwitcher.viewmodel
 import androidx.lifecycle.ViewModel
 import com.example.theSwitcher.model.Room
 
-//pretending to be a backend request
-class RoomsViewModel: ViewModel() {
+class RoomsViewModel : ViewModel() {
     private var roomsList: List<Room> = mutableListOf(
         Room("Kitchen"),
         Room("Living room"),
@@ -16,7 +15,7 @@ class RoomsViewModel: ViewModel() {
     fun getRoomList(): List<Room> = roomsList
 
     //to save upon changing fragments
-    fun saveRoomList(newRoomList: List<Room>){
+    fun saveRoomList(newRoomList: List<Room>) {
         roomsList = newRoomList
     }
 }

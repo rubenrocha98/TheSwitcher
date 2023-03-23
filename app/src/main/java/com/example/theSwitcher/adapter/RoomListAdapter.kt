@@ -26,9 +26,7 @@ class RoomListAdapter(
 
     override fun getItemCount(): Int = roomsList.size
 
-    fun getRoomList(): List<Room> = roomsList
-
-    fun setRoomList(rooms: List <Room>){
+    fun setRoomList(rooms: List<Room>) {
         roomsList.clear()
         roomsList.addAll(rooms)
     }
@@ -43,8 +41,7 @@ class RoomListAdapter(
         fun bind(data: Room) {
             roomText.text = data.roomName
             switch.isChecked = data.lightOn
-            switch.setOnClickListener {data.lightOn = (it as SwitchCompat).isChecked
-            }
+            switch.setOnClickListener { data.lightOn = (it as SwitchCompat).isChecked }
             itemView.setOnClickListener { onItemClicked(data) }
         }
     }

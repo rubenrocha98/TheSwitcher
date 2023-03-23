@@ -1,7 +1,7 @@
 package com.example.theSwitcher
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.theswitcher_rubenrocha.R
 
 class MainActivity : AppCompatActivity() {
