@@ -16,6 +16,6 @@
     <fragment
         android:id="@+id/insideRoomFragment"
         android:name="com.example.theSwitcher.view.InsideRoomFragment"
-        android:label="room"/>
+        android:label="room" />
 
 </navigation>

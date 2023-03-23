@@ -34,7 +34,7 @@ class InsideRoomFragment : Fragment(R.layout.inside_room_fragment) {
             setNavigationOnClickListener { findNavController().popBackStack() }
         }
         binding.roomTextView.text = getString(R.string.room_light_message).format(room.roomName)
-        if (room.lightOn){
+        if (room.lightOn) {
             binding.imageView.setImageResource(R.drawable.light_on)
             binding.lightTextView.text = getString(R.string.on)
         } else {
