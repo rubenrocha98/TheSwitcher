@@ -5,11 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.widget.SwitchCompat
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.theSwitcher.model.Room
 import com.example.theswitcher_rubenrocha.R
-import com.google.android.material.switchmaterial.SwitchMaterial
 
 class RoomListAdapter(
     private val onItemClicked: (data: Room) -> Unit,
@@ -38,12 +38,12 @@ class RoomListAdapter(
     }
 
     inner class RoomViewHolder(itemView: View) : ViewHolder(itemView) {
-        val switch = itemView.findViewById<SwitchMaterial>(R.id.lightSwitch)
-        val roomText = itemView.findViewById<TextView>(R.id.roomName)
+        private val switch: SwitchCompat = itemView.findViewById(R.id.lightSwitch)
+        private val roomText: TextView = itemView.findViewById(R.id.roomName)
         fun bind(data: Room) {
             roomText.text = data.roomName
-            data.lightOn = switch.isChecked
-            switch.setOnClickListener {data.lightOn = (it as SwitchMaterial).isChecked
+            switch.isChecked = data.lightOn
+            switch.setOnClickListener {data.lightOn = (it as SwitchCompat).isChecked
             }
             itemView.setOnClickListener { onItemClicked(data) }
         }

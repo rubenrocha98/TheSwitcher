@@ -1,6 +1,8 @@
 package com.example.theSwitcher.model
 
-import java.io.Serializable
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 
 
-data class Room(var roomName: String, var lightOn: Boolean = false): Serializable
+@Parcelize
+data class Room(var roomName: String, var lightOn: Boolean = false): Parcelable
