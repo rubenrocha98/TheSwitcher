@@ -4,6 +4,8 @@ import androidx.lifecycle.ViewModel
 import com.example.theSwitcher.model.Room
 
 class RoomsViewModel : ViewModel() {
+
+    //add more rooms here for testing purposes
     private var roomsList: List<Room> = mutableListOf(
         Room("Kitchen"),
         Room("Living room"),

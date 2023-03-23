@@ -2,5 +2,8 @@
     <string name="app_name">Switcher App</string>
     <string name="menu_title">Switcher App</string>
     <string name="back">Back</string>
+    <string name="room_light_message">Your %s light is</string>
+    <string name="on">ON</string>
+    <string name="off">OFF</string>
 
 </resources>

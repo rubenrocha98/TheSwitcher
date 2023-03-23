@@ -33,8 +33,14 @@ class InsideRoomFragment : Fragment(R.layout.inside_room_fragment) {
             setNavigationIcon(R.drawable.baseline_arrow_back_24)
             setNavigationOnClickListener { findNavController().popBackStack() }
         }
-        binding.textView.text = if (room.lightOn) "light on" else "light off"
-
+        binding.roomTextView.text = getString(R.string.room_light_message).format(room.roomName)
+        if (room.lightOn){
+            binding.imageView.setImageResource(R.drawable.light_on)
+            binding.lightTextView.text = getString(R.string.on)
+        } else {
+            binding.imageView.setImageResource(R.drawable.light_off)
+            binding.lightTextView.text = getString(R.string.off)
+        }
     }
 
 }
