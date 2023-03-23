@@ -28,11 +28,11 @@ class InsideRoomFragment : Fragment(R.layout.inside_room_fragment) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         room = requireArguments().getRoom()
-        binding.toolbar.apply {
-            title = room.roomName
-            setNavigationIcon(R.drawable.baseline_arrow_back_24)
-            setNavigationOnClickListener { findNavController().popBackStack() }
-        }
+        setupViews()
+    }
+
+    private fun setupViews() {
+        setupToolbar()
         binding.roomTextView.text = getString(R.string.room_light_message).format(room.roomName)
         if (room.lightOn) {
             binding.imageView.setImageResource(R.drawable.light_on)
@@ -41,6 +41,15 @@ class InsideRoomFragment : Fragment(R.layout.inside_room_fragment) {
             binding.imageView.setImageResource(R.drawable.light_off)
             binding.lightTextView.text = getString(R.string.off)
         }
+    }
+
+    private fun setupToolbar() {
+        binding.toolbar.apply {
+            title = room.roomName
+            setNavigationIcon(R.drawable.baseline_arrow_back_24)
+            setNavigationOnClickListener { findNavController().popBackStack() }
+        }
+        binding.backText.setOnClickListener { findNavController().popBackStack() }
     }
 
 }
